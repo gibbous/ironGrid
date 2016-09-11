@@ -1,0 +1,77 @@
+ <div class="container">
+      <div class="row">
+        <div class="jumbotron">
+          <h1>IronGrid</h1>
+            <p>No Frills News and Commentary from the Gridiron</p>
+        </div>
+      </div>
+</div>
+
+<div class="container">
+  <div class="row menu-panel">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <h3 class="text-success">Recent Comments</h3>
+
+      <div class="menu-burger">
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div class="burger">
+              {{this.burger_name}}
+
+              <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="btn btn-danger" type="submit">omnomnom</button>
+              </form>
+
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <h2>Add a Comment</h2>
+        <div>
+        <img src="/assets/img/burger.png" alt="happy-burger" width=166px>
+        </div>
+          <form class="create-update-form" action="burgers/create" method="POST">
+
+            <div class="form-group">
+              <label for="bg">Burger Name:</label>
+              <input type="text" id="bg" name="burger_name">
+            </div>
+
+            <div class="form-group">
+              <input type="hidden" name="devoured" value="0"> 
+            </div>
+
+            <button class="btn btn-warning" type="submit">Add Burger</button>
+          </form>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <h3 class="text-success">News Articles go here</h3>
+
+        <div class="menu-burger">
+          {{#each burgers}}
+            {{#if this.devoured}}
+              <div class="burger">
+                {{this.burger_name}}
+
+                <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="devoured" value="false">
+                  <button class="btn btn-success" type="submit">Make Again!</button>
+                </form>
+
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+

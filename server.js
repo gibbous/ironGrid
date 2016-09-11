@@ -1,18 +1,14 @@
-/* Showing Mongoose's "Populated" Method (18.3.8)
- * INSTRUCTOR ONLY
- * =============================================== */
-
-// dependencies
+// DEPENDENCIES
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-// Notice: Our scraping tools are prepared, too
+
 var request = require('request'); 
 var cheerio = require('cheerio');
 
-// use morgan and bodyparser with our app
+
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
   extended: false
@@ -50,13 +46,13 @@ app.get('/', function(req, res) {
   res.send(index.html);
 });
 
-// A GET request to scrape the echojs website.
+// A GET request to scrape the cbssports website.
 app.get('/scrape', function(req, res) {
   // first, we grab the body of the html with request
   request('http://www.cbssports.com/nfl/1/', function(error, response, html) {
     // then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
-    // now, we grab every h2 within an article tag, and do the following:
+    // now, we grab every h3 within an article tag, and do the following:
     $('h3.article-list-pack-title').each(function(i, element) {
 
         // save an empty result object
@@ -106,7 +102,7 @@ app.get('/articles', function(req, res){
   });
 });
 
-// grab an article by it's ObjectId
+// grab an article by its ObjectId
 app.get('/articles/:id', function(req, res){
   // using the id passed in the id parameter, 
   // prepare a query that finds the matching one in our db...

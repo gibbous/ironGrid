@@ -1,6 +1,7 @@
 body {
-  background-image: url(../img/tablecloth.jpg);
-  text-align: center;
+  background: whitesmoke;
+  
+  
 }
 
 li {
@@ -9,14 +10,18 @@ li {
   padding: 5px;
 }
 
-p {
-  color: #7ef436;
+p{
+
+}
+
+.sub {
+  color: whitesmoke;
 }
 .jumbotron {
 
   margin-bottom: 10px;
-  
-  color: #def436;
+  text-align: center;
+  color: #ffeb3b;
   font-family: 'Alfa Slab One', cursive;
   text-shadow: black 1px 1px 2px;
   background: #FFF275;
@@ -27,24 +32,16 @@ p {
   background-repeat: no-repeat;
 }
 
-.menu-panel {
-  background: #FFF275;
-  border-radius: 25px;
-  border: 2px solid #FF8C42; 
+.news-panel {
+  background: white;
+  border: 2px solid lightgray; 
   padding-bottom: 10px;
 }
-.menu-burger {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 25px;
-  border: 2px solid #FF8C42; 
-  padding: 10px;
-}
-.burger {
-  padding: 10px;
-  font-size: 16pt;
-  border-bottom: 2px solid rgba(255, 140, 66, 0.3);
-}
 
+
+#load {
+  margin-top: 15px;
+}
 .label {
   font-weight: bold;
 }

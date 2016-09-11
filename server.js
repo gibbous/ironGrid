@@ -80,7 +80,7 @@ app.get('/scrape', function(req, res) {
           }
         });
 
-
+        
     });
   });
   // tell the browser that we finished scraping the text.

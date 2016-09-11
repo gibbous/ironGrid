@@ -24,7 +24,7 @@ $(document).on('click', 'p', function(){
     .done(function( data ) {
       console.log(data);
       // the title of the article
-      $('#notes').append('<h2>' + data.title + '</h2>'); 
+      $('#notes').append('<h4>' + data.title + '</h4>'); 
       // an input to enter a new title
       $('#notes').append('<input id="titleinput" name="title" >'); 
       // a textarea to add a new note body
@@ -35,9 +35,7 @@ $(document).on('click', 'p', function(){
       // if there's a note in the article
       if(data.note){
         // place the title of the note in the title input
-        $('#comments-title').append('<h3>' + data.note.title + '</h3>');
-        // place the body of the note in the body textarea
-        $('#comments-body').append('<p>' + data.note.body + '</h3>');
+        $('#comments').append('<h4>' + data.note.title + '</h4> <p>' + data.note.body + '</p>');
       }
     });
 });
